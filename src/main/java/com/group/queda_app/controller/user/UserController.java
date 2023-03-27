@@ -18,12 +18,13 @@ public class UserController {
     @Autowired
     private final UserService userService;
 
-    @PostMapping("user/login")
-    public String login(@ModelAttribute UserReponse userReponse, HttpSession session){
-        UserReponse logintResult  = userService.login(userReponse);
+
+    @PostMapping("user/login") // 오류 해결 @ModelAtrribute 함부로 쓰지 말것!!!!!!!!!!!!!!!! 아오!!
+    public String login(@RequestBody UserDto userDto, HttpSession session){
+        UserDto logintResult  = userService.login(userDto);
 
         if(logintResult != null) {
-            session.setAttribute("loginid", userReponse.getUserId());
+            session.setAttribute("loginid", userDto.getUserId());
             // login 성공
             System.out.println("로그인성공");
 
@@ -38,8 +39,8 @@ public class UserController {
     }
 
     @PostMapping("user/11")
-    public void userLogin(@RequestBody UserReponse userReponse){
-        userService.userLogin(userReponse);
+    public void userLogin(@ModelAttribute UserDto userDto){
+        userService.userLogin(userDto);
     }
 
 

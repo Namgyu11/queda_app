@@ -5,8 +5,7 @@ import com.group.queda_app.domain.user_isLike.UserisLike;
 
 import com.group.queda_app.domain.user_scrap.UserScrap;
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 
 import java.time.LocalDateTime;
@@ -16,6 +15,8 @@ import java.util.List;
 @Entity(name = "User")
 @Setter
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

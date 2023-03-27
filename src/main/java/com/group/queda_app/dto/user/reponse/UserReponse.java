@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 
 public class UserReponse {
 
@@ -23,6 +24,9 @@ public class UserReponse {
     private boolean isAdmin;
     private LocalDateTime dateCreated;
 
+
+
+    // Mapstruct 사용하기
     public static UserReponse toUserReponce(User user){
         UserReponse userReponse = new UserReponse();
         userReponse.setUserNum(user.getUserNum());
@@ -36,5 +40,6 @@ public class UserReponse {
         userReponse.setDateCreated(user.getDateCreated());
         return userReponse;
     }
+
 
 }
