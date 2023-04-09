@@ -1,5 +1,6 @@
 package com.group.queda_app.dto.post;
 
+import com.group.queda_app.domain.post.Post;
 import lombok.*;
 
 import java.time.LocalDate;
@@ -19,4 +20,21 @@ public class PostDTO {
     private boolean prmOnOff;
     private LocalDate datePrmStart;
     private LocalDate datePrmEnd;
+
+    public PostDTO(Post post) {
+    }
+
+    public static PostDTO toPostDTO(Post post){
+        PostDTO postDTO = new PostDTO();
+        postDTO.setPostNum(post.getPostNum());
+        postDTO.setStoreId(post.getStoreId());
+        postDTO.setTitle(post.getTitle());
+        postDTO.setText(post.getText());
+        postDTO.setImage(post.getImage());
+        postDTO.setDateUpload(post.getDateUpload());
+        postDTO.setPrmOnOff(post.isPrmOnOff());
+        postDTO.setDatePrmStart(post.getDatePrmStart());
+        postDTO.setDatePrmEnd(post.getDatePrmEnd());
+        return postDTO;
+    }
 }

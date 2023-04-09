@@ -33,7 +33,7 @@ public class UserService {
           System.out.println(user.getUserId());
     }
 
-    @Transactional // DTO 객체로 login 로직 짜는게 좋을 것 같은데....
+    @Transactional
     public UserDto login(UserDto userDto) {
         // 1. 회원이 입력한 아이디로 DB에서 조회
         // 2. DB에서 조회한 비밀번호와 사용자가 입력한 비밀번호가 일치하는지 판단
