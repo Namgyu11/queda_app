@@ -43,4 +43,5 @@ public class PostController {
             return ResponseEntity.ok(postDTOs);
         }
     }
+    //게시물 수정
 }

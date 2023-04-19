@@ -48,6 +48,6 @@ public class Post {
     @Column(name = "date_prm_end")
     private LocalDate datePrmEnd;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "postNum", cascade = CascadeType.ALL)
     private List<UserScrap> userScraps = new ArrayList<>();
 }

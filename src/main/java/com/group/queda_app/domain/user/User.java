@@ -43,6 +43,6 @@ public class User {
 
     @OneToMany(mappedBy = "user",  cascade = CascadeType.ALL)
     private List<UserisLike> userIsLikes = new ArrayList<>();
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "userId", cascade = CascadeType.ALL)
     private List<UserScrap> userScraps = new ArrayList<>();
 }
