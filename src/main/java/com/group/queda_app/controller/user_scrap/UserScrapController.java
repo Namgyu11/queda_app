@@ -14,8 +14,9 @@ public class UserScrapController {
     @Autowired
     private UserScrapService userScrapService;
 
-    @GetMapping("/user/{userId}")
-    public List<UserScrapDTO> getScrapedPostsByUser(@PathVariable("userId") Long userId) {
+
+    @GetMapping("/user")
+    public List<UserScrapDTO> getScrapedPostsByUser(@RequestParam("userId") String userId) {
         return userScrapService.getScrapedPostsByUser(userId);
     }
 }

@@ -22,11 +22,12 @@ public class UserScrapService {
     @Autowired
     private UserRepository userRepository;
 
-    public List<UserScrapDTO> getScrapedPostsByUser(long userId) {
-        User user = userRepository.findById(userId).orElseThrow();
-        List<UserScrap> userScraps = userScrapRepository.findAllByUserId(Long.valueOf(user.getUserId()));
+    public List<UserScrapDTO> getScrapedPostsByUser(String userId) {
+        User user = userRepository.findById(userId).orElseThrow(); // Change long to String
+        List<UserScrap> userScraps = userScrapRepository.findAllByUserId(userId); // Change Long.valueOf to userId
         return userScraps.stream().map(UserScrapDTO::convertToDto).collect(Collectors.toList());
     }
+
 
 
 
